@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders', #sirve para poder comunicarnos con otro backend
     'rest_framework', #permite seguridada asi como la creacion de apis instantaneas
+    'coreapi',
     'tasks',
 ]
 
@@ -130,3 +131,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 """ se configuara quein pyuede hacer peticiones en el servidor """
 #cors authorization
 CORS_ALLOWED_ORIGINS = []
+
+REST_FRAMEWORK = {
+    ...: ...,
+    "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
+}
